@@ -80,8 +80,6 @@ if [ -d "$DEPLOY_DIR" ]; then
         fi
     fi
 else
-    echo "La aplicación '$APP_NAME' no está desplegada."
-
     # Ejecutar el script de despliegue
     echo "Ejecutando despliegue..."
     bash ./deploy_script.sh "$APP_NAME"

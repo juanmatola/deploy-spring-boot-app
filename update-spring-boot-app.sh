@@ -79,11 +79,6 @@ if [ ! -d "$TARGET_DIR" ]; then
     exit 1
 fi
 
-# Crear directorio de despliegue si no existe
-echo "Creando directorio de despliegue: $DEPLOY_DIR"
-sudo mkdir -p "$DEPLOY_DIR"
-sudo chmod -R u+w "$DEPLOY_DIR"
-
 # Crear directorio de respaldo si no existe
 echo "Creando directorio de respaldo: $BACKUP_DIR"
 sudo mkdir -p "$BACKUP_DIR"
