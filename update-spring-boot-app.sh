@@ -10,7 +10,7 @@ fi
 APP_NAME=$1
 
 # Archivo de configuración
-CONFIG_FILE="./app_config.conf"
+CONFIG_FILE="./deploy.conf"
 
 # Verificar si el archivo de configuración existe
 if [ ! -f "$CONFIG_FILE" ]; then
