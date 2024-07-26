@@ -79,9 +79,14 @@ if [ ! -d "$TARGET_DIR" ]; then
     exit 1
 fi
 
-# Crear directorio de respaldo si no existe
-echo "Creando directorio de respaldo: $BACKUP_DIR"
-sudo mkdir -p "$BACKUP_DIR"
+if [ -d "$BACKUP_DIR" ]; then
+    echo "Limpiando directorio de respaldo existente: $BACKUP_DIR"
+    sudo rm -rf "$BACKUP_DIR"/*
+else
+    # Crear directorio de respaldo si no existe
+    echo "Creando directorio de respaldo: $BACKUP_DIR"
+    sudo mkdir -p "$BACKUP_DIR"
+fi
 
 # Hacer copia de seguridad de los archivos existentes
 echo "Haciendo copia de seguridad de los archivos existentes en $DEPLOY_DIR"
