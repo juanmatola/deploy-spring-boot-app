@@ -60,7 +60,7 @@ if [ -d "$DEPLOY_DIR" ]; then
         if [[ "$respuesta" == "s" || "$respuesta" == "S" ]]; then
             # Ejecutar el script de actualización
             echo "Ejecutando actualización..."
-            bash ./update_script.sh "$APP_NAME"
+            bash ./update-spring-boot-app.sh "$APP_NAME"
         else
             echo "Actualización abortada."
             exit 0
@@ -72,8 +72,7 @@ if [ -d "$DEPLOY_DIR" ]; then
         read -p "¿Desea desplegar de nuevo? (s/n): " respuesta
         if [[ "$respuesta" == "s" || "$respuesta" == "S" ]]; then
             # Ejecutar el script de despliegue
-            echo "Ejecutando despliegue..."
-            bash ./deploy_script.sh "$APP_NAME"
+            echo "Crear el servicio nuevamente (TODO)..."
         else
             echo "Despliegue abortado."
             exit 0
@@ -82,5 +81,5 @@ if [ -d "$DEPLOY_DIR" ]; then
 else
     # Ejecutar el script de despliegue
     echo "Ejecutando despliegue..."
-    bash ./deploy_script.sh "$APP_NAME"
+    bash ./deploy-spring-boot-app.sh "$APP_NAME"
 fi

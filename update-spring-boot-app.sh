@@ -85,8 +85,8 @@ sudo mkdir -p "$BACKUP_DIR"
 
 # Hacer copia de seguridad de los archivos existentes
 echo "Haciendo copia de seguridad de los archivos existentes en $DEPLOY_DIR"
-sudo cp "$DEPLOY_DIR"/app.jar "$BACKUP_DIR"/app.jar.bak
-sudo cp -r "$DEPLOY_DIR"/config/* "$BACKUP_DIR"/config.bak
+sudo mv "$DEPLOY_DIR"/app.jar "$BACKUP_DIR"/app.jar.bak
+sudo mv -r "$DEPLOY_DIR"/config/* "$BACKUP_DIR"/config.bak
 
 # Copiar archivo JAR compilado a /opt/<nombre_de_la_aplicacion>/app.jar
 echo "Copiando $TARGET_DIR/*.jar a $DEPLOY_DIR/app.jar"
