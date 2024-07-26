@@ -8,6 +8,14 @@ FILES=(
     "./deploy-app.sh"
 )
 
+# Verificar si el directorio UPLOADS_DIR existe y crearlo si es necesario
+if [ ! -d "$UPLOADS_DIR" ]; then
+    echo "El directorio $UPLOADS_DIR no existe. Creándolo..."
+    mkdir -p "$UPLOADS_DIR"
+else
+    echo "El directorio $UPLOADS_DIR ya existe."
+fi
+
 # Agregar permisos de ejecución a cada archivo
 for FILE in "${FILES[@]}"; do
     if [ -f "$FILE" ]; then
