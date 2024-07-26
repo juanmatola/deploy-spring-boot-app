@@ -8,6 +8,8 @@ FILES=(
     "./deploy-app.sh"
 )
 
+UPLOADS_DIR="${HOME}/uploads"
+
 # Verificar si el directorio UPLOADS_DIR existe y crearlo si es necesario
 if [ ! -d "$UPLOADS_DIR" ]; then
     echo "El directorio $UPLOADS_DIR no existe. Creándolo..."
@@ -27,3 +29,5 @@ for FILE in "${FILES[@]}"; do
 done
 
 echo "Permisos de ejecución agregados."
+
+echo "Configuración inicial finalizada. Recuerda configurar tu JAVA_HOME en el archivo deploy.conf"
