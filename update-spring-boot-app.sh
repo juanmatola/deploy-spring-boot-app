@@ -94,7 +94,7 @@ sudo cp "$TARGET_DIR"/*.jar "$DEPLOY_DIR"/app.jar
 
 # Copiar directorio de configuración a /opt/<nombre_de_la_aplicacion>
 echo "Copiando $CONFIG_DIR a $DEPLOY_DIR"
-sudo cp -r "$CONFIG_DIR"/* "$DEPLOY_DIR"/config/
+sudo cp -r "$CONFIG_DIR" "$DEPLOY_DIR"
 
 # Recargar y reiniciar el servicio
 echo "Reiniciando servicio $APP_NAME."
